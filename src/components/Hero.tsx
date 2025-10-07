@@ -20,11 +20,9 @@ const Hero = () => {
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
         }}
       />
       
