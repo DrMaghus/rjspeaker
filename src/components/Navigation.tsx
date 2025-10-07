@@ -34,6 +34,7 @@ const Navigation = () => {
     { name: 'Conferencias', id: 'conferencias' },
     { name: 'Sobre Richard', id: 'sobre-richard' },
     { name: 'Podcast', href: 'https://open.spotify.com/show/17lUXLgHea99EWQfMz7Qqc', external: true },
+    { name: 'Blog', href: 'https://blog.rjohnsonh.com', external: false },
     { name: 'Contacto', id: 'contacto' },
   ];
 
@@ -60,12 +61,12 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) =>
-              link.external ? (
+              link.href ? (
                 <a
                   key={link.name}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="text-navy hover:text-sky font-medium transition-colors duration-300"
                 >
                   {link.name}
@@ -110,12 +111,12 @@ const Navigation = () => {
       >
         <div className="flex flex-col p-6 space-y-6 mt-20">
           {navLinks.map((link) =>
-            link.external ? (
+            link.href ? (
               <a
                 key={link.name}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-navy hover:text-sky font-medium text-lg transition-colors duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
