@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -32,16 +32,16 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 gradient-hero" />
       
       {/* Content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up leading-tight">
+      <div className="relative z-20 max-w-5xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4 lg:mb-6 animate-fade-in-up">
           Inspiro a equipos a transformar datos en experiencias relevantes que conectan y generan valor
         </h1>
         
-        <h2 className="text-xl md:text-2xl font-medium text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <h2 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-white mb-3 sm:mb-4 lg:mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           Speaker | Consultor en Experiencia Digital y Analítica de Clientes
         </h2>
         
-        <p className="text-lg text-white/90 mb-10 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <p className="text-sm sm:text-base lg:text-lg text-white/90 mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           Con +18 años liderando transformación digital en LATAM, combino storytelling inspirador con frameworks accionables para construir experiencias empáticas, oportunas e inteligentes
         </p>
         
