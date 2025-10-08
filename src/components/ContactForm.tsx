@@ -14,6 +14,12 @@ const ContactForm = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    
+    // Track submit attempt
+    window.gtag?.('event', 'form_submit_attempt', {
+      form_name: 'contacto'
+    });
+    
     setErrorMessage('');
 
     try {
@@ -37,6 +43,11 @@ const ContactForm = () => {
 
       if (data.success) {
         setStatus('success');
+        
+        // Track success
+        window.gtag?.('event', 'form_submit_success', {
+          form_name: 'contacto'
+        });
         
         // Clear form after 2 seconds
         setTimeout(() => {
@@ -215,5 +226,11 @@ const ContactForm = () => {
     </section>
   );
 };
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 export default ContactForm;
