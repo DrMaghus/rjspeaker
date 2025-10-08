@@ -45,17 +45,9 @@ const ConferenceCard = ({
   const gradientClass = isCard1 
     ? 'bg-gradient-to-b from-[#21334E] to-[#4495DE]' 
     : 'bg-gradient-to-b from-[#4495DE] to-[#3fafe4ff]';
-  const badgeText = isCard1 ? 'Keynote' : 'Workshop';
-  const buttonBgClass = isCard1 ? 'bg-[#4495DE]' : 'bg-[#3fafe4ff]';
 
   return (
     <div className={`${gradientClass} rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:rotate-x-[2deg] relative`}>
-      {/* Badge */}
-      <div className="absolute top-4 right-4">
-        <span className="bg-[#F97316] text-white rounded-full px-3 py-1 text-sm font-semibold">
-          {badgeText}
-        </span>
-      </div>
 
       {/* Header - Always Visible */}
       <div className="flex flex-col items-center text-center gap-4 mb-4">
@@ -71,7 +63,7 @@ const ConferenceCard = ({
           </p>
           <button
             onClick={onToggle}
-            className={`${buttonBgClass} text-white px-6 py-2 rounded-md font-medium hover:brightness-110 transition-all inline-flex items-center gap-2`}
+            className="bg-[#F97316] text-white px-6 py-2 rounded-md font-medium hover:brightness-110 transition-all inline-flex items-center gap-2"
             data-event="cta_click"
             data-cta-name={`toggle_conferencia_${id}`}
             data-cta-location="conferencias"
