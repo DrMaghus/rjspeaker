@@ -178,7 +178,7 @@ const ConferenceAccordion = () => {
       emoji: '💎',
       title: 'VALOR: Los 5 Pasos hacia un Customer Experience Relevante',
       subtitle:
-        'En un mundo saturado de datos y tecnología, lo que realmente diferencia a las marcas es su capacidad de generar valor humano y relevante para sus clientes.',
+        'El modelo VALOR es un framework de cinco pasos para transformar el CX: Ver, Anticipar, Liberar, Orquestar y Reforzar. Aprende a combinar empatía, oportunidad e inteligencia para construir experiencias que generan confianza y resultados.',
       description:
         'Esta charla presenta el modelo VALOR, un recorrido de cinco pasos que ayuda a líderes y equipos a transformar la experiencia del cliente: Ver al cliente como persona, Anticipar sus expectativas, Liberar los silos, Orquestar con inteligencia y Reforzar con impacto. Con un estilo inspirador y estratégico, esta conferencia muestra cómo combinar empatía, oportunidad e inteligencia para construir relaciones sólidas, diferenciarse en mercados competitivos y generar resultados tangibles para el negocio.',
       idealFor: [
