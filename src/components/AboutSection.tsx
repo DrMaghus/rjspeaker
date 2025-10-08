@@ -26,7 +26,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="sobre-richard" className="py-20 md:py-28 bg-light-gray">
+    <section id="sobre-richard" data-section="sobre_richard" className="py-20 md:py-28 bg-light-gray">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Left Column - Image */}
@@ -97,6 +97,9 @@ const AboutSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline-sky inline-block"
+              data-event="cta_click"
+              data-cta-name="linkedin_profile"
+              data-cta-location="sobre_richard"
             >
               Ver perfil en LinkedIn
             </a>

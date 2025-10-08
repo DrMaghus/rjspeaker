@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
+    <section id="inicio" data-section="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center"
@@ -47,12 +47,18 @@ const Hero = () => {
           <button
             onClick={() => scrollToSection('conferencias')}
             className="btn-hero-primary w-full sm:w-auto"
+            data-event="cta_click"
+            data-cta-name="ver_conferencias"
+            data-cta-location="hero"
           >
             Ver Conferencias
           </button>
           <button
             onClick={() => scrollToSection('contacto')}
             className="btn-hero-secondary w-full sm:w-auto"
+            data-event="cta_click"
+            data-cta-name="contactar"
+            data-cta-location="hero"
           >
             Contactar
           </button>
@@ -64,6 +70,9 @@ const Hero = () => {
         onClick={() => scrollToSection('conferencias')}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce-slow cursor-pointer group"
         aria-label="Scroll to conferences"
+        data-event="cta_click"
+        data-cta-name="scroll_conferencias"
+        data-cta-location="hero"
       >
         <ChevronDown className="h-10 w-10 text-white group-hover:text-cyan transition-colors duration-300" />
       </button>

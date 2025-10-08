@@ -69,6 +69,8 @@ const GallerySection = () => {
 
   return (
     <section 
+      id="galeria"
+      data-section="galeria"
       className="py-20 bg-gradient-to-b from-white to-slate-50"
       role="region"
       aria-label="Galería de fotos"
@@ -118,6 +120,9 @@ const GallerySection = () => {
               onClick={scrollPrev}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-300 z-10"
               aria-label="Ver foto anterior"
+              data-event="cta_click"
+              data-cta-name="gallery_prev"
+              data-cta-location="galeria"
             >
               <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-[#21334E]" />
             </button>
@@ -126,6 +131,9 @@ const GallerySection = () => {
               onClick={scrollNext}
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-300 z-10"
               aria-label="Ver siguiente foto"
+              data-event="cta_click"
+              data-cta-name="gallery_next"
+              data-cta-location="galeria"
             >
               <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-[#21334E]" />
             </button>
@@ -143,6 +151,9 @@ const GallerySection = () => {
                     : 'bg-white/50 hover:bg-white/80'
                 }`}
                 aria-label={`Ir a foto ${index + 1} de ${images.length}`}
+                data-event="cta_click"
+                data-cta-name={`gallery_dot_${index + 1}`}
+                data-cta-location="galeria"
               />
             ))}
           </div>

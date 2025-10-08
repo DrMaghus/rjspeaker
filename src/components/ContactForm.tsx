@@ -66,7 +66,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contacto" className="py-20 md:py-28 gradient-contact">
+    <section id="contacto" data-section="contacto" className="py-20 md:py-28 gradient-contact">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -191,6 +191,9 @@ const ContactForm = () => {
               type="submit"
               disabled={status === 'loading' || status === 'success'}
               className="w-full bg-[#F97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              data-event="cta_click"
+              data-cta-name="enviar_contacto"
+              data-cta-location="contacto"
             >
               {status === 'loading' ? (
                 <>

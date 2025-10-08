@@ -44,7 +44,7 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-slate-50">
+    <section id="blog" data-section="blog" className="py-20 px-6 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#21334E' }}>
@@ -111,6 +111,9 @@ const BlogSection = () => {
                   style={{ color: '#F97316' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#ea580c'}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#F97316'}
+                  data-event="cta_click"
+                  data-cta-name={`blog_post_${post.id}`}
+                  data-cta-location="blog"
                 >
                   Leer más →
                 </a>

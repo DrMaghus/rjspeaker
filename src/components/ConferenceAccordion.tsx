@@ -15,6 +15,7 @@ interface ConferenceCardProps {
 }
 
 const ConferenceCard = ({
+  id,
   emoji,
   title,
   subtitle,
@@ -54,6 +55,9 @@ const ConferenceCard = ({
           <button
             onClick={onToggle}
             className="btn-outline-cyan inline-flex items-center gap-2"
+            data-event="cta_click"
+            data-cta-name={`toggle_conferencia_${id}`}
+            data-cta-location="conferencias"
           >
             {isOpen ? 'Ver menos' : 'Ver más'}
             <ChevronDown
@@ -122,6 +126,9 @@ const ConferenceCard = ({
             <button
               onClick={() => scrollToSection('contacto')}
               className="btn-cta-orange"
+              data-event="cta_click"
+              data-cta-name="solicitar_info"
+              data-cta-location="conferencias"
             >
               Solicitar información
             </button>
@@ -189,7 +196,7 @@ const ConferenceAccordion = () => {
   };
 
   return (
-    <section id="conferencias" className="py-20 md:py-28 bg-white">
+    <section id="conferencias" data-section="conferencias" className="py-20 md:py-28 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
