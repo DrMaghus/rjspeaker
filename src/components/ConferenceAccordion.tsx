@@ -40,21 +40,38 @@ const ConferenceCard = ({
     }
   };
 
+  // Determine card styling based on id
+  const isCard1 = id === 1;
+  const gradientClass = isCard1 
+    ? 'bg-gradient-to-b from-[#21334E] to-[#4495DE]' 
+    : 'bg-gradient-to-b from-[#4495DE] to-[#3fafe4ff]';
+  const badgeText = isCard1 ? 'Keynote' : 'Workshop';
+  const buttonBgClass = isCard1 ? 'bg-[#4495DE]' : 'bg-[#3fafe4ff]';
+
   return (
-    <div className="border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
+    <div className={`${gradientClass} rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:rotate-x-[2deg] relative`}>
+      {/* Badge */}
+      <div className="absolute top-4 right-4">
+        <span className="bg-[#F97316] text-white rounded-full px-3 py-1 text-sm font-semibold">
+          {badgeText}
+        </span>
+      </div>
+
       {/* Header - Always Visible */}
-      <div className="flex items-start gap-4 mb-4">
-        <span className="text-3xl flex-shrink-0">{emoji}</span>
-        <div className="flex-1">
-          <h3 className="text-xl md:text-2xl font-bold text-navy mb-3 leading-tight">
+      <div className="flex flex-col items-center text-center gap-4 mb-4">
+        <span className="text-6xl" style={{ textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>
+          {emoji}
+        </span>
+        <div className="w-full">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
             {title}
           </h3>
-          <p className="text-base md:text-lg text-slate-gray mb-4">
+          <p className="text-base md:text-lg text-white/90 mb-4">
             {subtitle}
           </p>
           <button
             onClick={onToggle}
-            className="btn-outline-cyan inline-flex items-center gap-2"
+            className={`${buttonBgClass} text-white px-6 py-2 rounded-md font-medium hover:brightness-110 transition-all inline-flex items-center gap-2`}
             data-event="cta_click"
             data-cta-name={`toggle_conferencia_${id}`}
             data-cta-location="conferencias"
@@ -75,20 +92,20 @@ const ConferenceCard = ({
           isOpen ? 'max-h-[2000px] opacity-100 mt-6' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="space-y-6 pt-6 border-t border-gray-200">
+        <div className="space-y-6 pt-6 border-t border-white/20">
           {/* Description */}
           <div>
-            <p className="text-slate-gray leading-relaxed">{description}</p>
+            <p className="text-white/90 leading-relaxed">{description}</p>
           </div>
 
           {/* Ideal Para */}
           <div>
-            <h4 className="text-lg font-semibold text-navy mb-3">Ideal para:</h4>
+            <h4 className="text-lg font-semibold text-white mb-3">Ideal para:</h4>
             <ul className="space-y-2">
               {idealFor.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-[hsl(var(--success))] flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-gray">{item}</span>
+                  <Check className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                  <span className="text-white/90">{item}</span>
                 </li>
               ))}
             </ul>
@@ -96,14 +113,14 @@ const ConferenceCard = ({
 
           {/* Qué se llevan */}
           <div>
-            <h4 className="text-lg font-semibold text-navy mb-3">
+            <h4 className="text-lg font-semibold text-white mb-3">
               Qué se llevan los participantes:
             </h4>
             <ul className="space-y-2">
               {takeaways.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-[hsl(var(--success))] flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-gray">{item}</span>
+                  <Check className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                  <span className="text-white/90">{item}</span>
                 </li>
               ))}
             </ul>
@@ -111,10 +128,10 @@ const ConferenceCard = ({
 
           {/* Duración */}
           <div>
-            <h4 className="text-lg font-semibold text-navy mb-3">Duración:</h4>
+            <h4 className="text-lg font-semibold text-white mb-3">Duración:</h4>
             <ul className="space-y-2">
               {duration.map((item, index) => (
-                <li key={index} className="text-slate-gray ml-4">
+                <li key={index} className="text-white/90 ml-4">
                   • {item}
                 </li>
               ))}
@@ -125,7 +142,7 @@ const ConferenceCard = ({
           <div className="pt-4">
             <button
               onClick={() => scrollToSection('contacto')}
-              className="btn-cta-orange"
+              className="bg-[#F97316] text-white px-8 py-3 rounded-md font-semibold hover:brightness-110 transition-all"
               data-event="cta_click"
               data-cta-name="solicitar_info"
               data-cta-location="conferencias"
@@ -209,7 +226,7 @@ const ConferenceAccordion = () => {
         </div>
 
         {/* Conference Cards */}
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {conferences.map((conference) => (
             <ConferenceCard
               key={conference.id}
