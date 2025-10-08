@@ -176,7 +176,7 @@ const ConferenceAccordion = () => {
     {
       id: 2,
       emoji: '💎',
-      title: 'VALOR: Los 5 Pasos hacia un Customer Experience Relevante',
+      title: 'VALOR: 5 Pasos para Construir Experiencias que Importan',
       subtitle:
         'El modelo VALOR es un framework de cinco pasos para transformar el CX: Ver, Anticipar, Liberar, Orquestar y Reforzar. Aprende a combinar empatía, oportunidad e inteligencia para construir experiencias que generan confianza y resultados.',
       description:
