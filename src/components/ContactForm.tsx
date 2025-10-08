@@ -16,7 +16,8 @@ const ContactForm = () => {
     setStatus('loading');
     
     // Track submit attempt
-    window.gtag?.('event', 'form_submit_attempt', {
+    window.dataLayer?.push({
+      event: 'form_submit_attempt',
       form_name: 'contacto'
     });
     
@@ -45,7 +46,8 @@ const ContactForm = () => {
         setStatus('success');
         
         // Track success
-        window.gtag?.('event', 'form_submit_success', {
+        window.dataLayer?.push({
+          event: 'form_submit_success',
           form_name: 'contacto'
         });
         
@@ -229,7 +231,7 @@ const ContactForm = () => {
 
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
   }
 }
 
