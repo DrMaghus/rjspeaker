@@ -30,13 +30,16 @@ const AboutSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Left Column - Image */}
-          <div className="lg:col-span-2">
-            <div className="relative">
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start">
+            <div className="relative w-3/4 md:w-2/3 lg:w-full">
               <img
                 src={portraitImage}
                 alt="Richard Johnson - Speaker en Customer Experience"
                 className="w-full aspect-[4/5] object-cover rounded-2xl shadow-md"
               />
+              <p className="lg:hidden text-center text-sm text-slate-gray mt-4">
+                Richard Johnson Hurtado. Noviembre 2025
+              </p>
             </div>
           </div>
 
