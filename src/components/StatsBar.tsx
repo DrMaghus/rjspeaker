@@ -34,7 +34,7 @@ const StatsBar = () => {
     },
     {
       number: '9.2/10',
-      label: 'Calificación promedio',
+      label: 'Calificación promedio docente',
       colorClass: 'text-orange',
     },
   ];
