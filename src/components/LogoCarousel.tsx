@@ -38,14 +38,14 @@ const LogoItem = ({ logo }: LogoItemProps) => {
 
   return (
     <div
-      className="relative flex-shrink-0 mx-10 md:mx-16 group"
+      className="relative flex-shrink-0 mx-4 md:mx-16 group"
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
       <img
         src={logo.src}
         alt={logo.fullName}
-        className="h-14 md:h-20 max-h-14 md:max-h-20 min-w-[120px] md:min-w-[160px] w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+        className="h-8 md:h-20 max-h-8 md:max-h-20 min-w-[70px] md:min-w-[160px] w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
       />
       {showTooltip && (
         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-1.5 bg-[#21334E] text-white text-xs rounded-lg shadow-lg whitespace-nowrap animate-fade-in z-10">
@@ -68,8 +68,8 @@ const CarouselBand = ({ logos, direction, title, isSecond = false }: CarouselBan
   const animationClass = direction === 'left' ? 'animate-scroll-left' : 'animate-scroll-right';
 
   return (
-    <div className={`w-full overflow-hidden ${isSecond ? 'mt-16' : ''}`}>
-      <p className="text-base md:text-lg font-semibold text-[#21334E] mb-10 tracking-wide uppercase text-center">
+    <div className={`w-full overflow-hidden ${isSecond ? 'mt-10 md:mt-16' : ''}`}>
+      <p className="text-sm md:text-lg font-semibold text-[#21334E] mb-6 md:mb-10 tracking-wide uppercase text-center">
         {title}
       </p>
       <div className="relative group">
@@ -95,7 +95,7 @@ const LogoCarousel = () => {
     <section
       role="region"
       aria-label="Colaboraciones y clientes"
-      className="py-16 md:py-20 bg-white w-full overflow-hidden"
+      className="py-10 md:py-20 bg-white w-full overflow-hidden"
     >
       <CarouselBand
         logos={collaborators}
