@@ -149,7 +149,7 @@ const ConferenceCard = ({
 };
 
 const ConferenceAccordion = () => {
-  const [openCard, setOpenCard] = useState<number | null>(null);
+  const [openCards, setOpenCards] = useState<Set<number>>(new Set());
 
   const conferences = [
     {
@@ -201,7 +201,15 @@ const ConferenceAccordion = () => {
   ];
 
   const handleToggle = (id: number) => {
-    setOpenCard(openCard === id ? null : id);
+    setOpenCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -218,12 +226,12 @@ const ConferenceAccordion = () => {
         </div>
 
         {/* Conference Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {conferences.map((conference) => (
             <ConferenceCard
               key={conference.id}
               {...conference}
-              isOpen={openCard === conference.id}
+              isOpen={openCards.has(conference.id)}
               onToggle={() => handleToggle(conference.id)}
             />
           ))}
