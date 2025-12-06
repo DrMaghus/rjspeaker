@@ -95,17 +95,19 @@ const AboutSection = () => {
             </div>
 
             {/* LinkedIn Button */}
-            <a
-              href="https://linkedin.com/in/rjohnsonh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline-sky inline-block"
-              data-event="cta_click"
-              data-cta-name="linkedin_profile"
-              data-cta-location="sobre_richard"
-            >
-              Ver perfil en LinkedIn
-            </a>
+            <div className="flex justify-center lg:justify-start">
+              <a
+                href="https://linkedin.com/in/rjohnsonh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-sky inline-block"
+                data-event="cta_click"
+                data-cta-name="linkedin_profile"
+                data-cta-location="sobre_richard"
+              >
+                Ver perfil en LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
