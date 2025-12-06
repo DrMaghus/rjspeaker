@@ -59,7 +59,7 @@ const Navigation = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) =>
               link.href ? (
                 <a
@@ -86,7 +86,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-light-gray transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-light-gray transition-colors"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6 text-navy" />
@@ -99,13 +99,13 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/50 transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 bg-black/50 transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
       <div
-        className={`md:hidden fixed right-0 top-0 bottom-0 w-64 bg-white shadow-2xl transform transition-transform duration-300 ${
+        className={`lg:hidden fixed right-0 top-0 bottom-0 w-64 bg-white shadow-2xl transform transition-transform duration-300 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
