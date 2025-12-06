@@ -19,9 +19,9 @@ const AboutSection = () => {
         'Cercano, divertido, consultivo y académico. Combina storytelling con frameworks accionables',
     },
     {
-      title: 'Más de 12 años como docente',
+      title: 'Director de posgrados en instituciones top',
       description:
-        'Ha formado a cientos de profesionales en analítica digital, UX y desarrollo de productos digitales',
+        'Pontificia Universidad Católica de Chile, IEBS, OBS. Formando talento en Analytics y CX con calificación docente promedio de 9.5/10',
     },
   ];
 
