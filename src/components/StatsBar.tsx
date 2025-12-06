@@ -33,7 +33,7 @@ const StatsBar = () => {
       colorClass: 'text-sky-blue',
     },
     {
-      number: '9.5/10',
+      number: '9.2/10',
       label: 'Calificación promedio',
       colorClass: 'text-orange',
     },

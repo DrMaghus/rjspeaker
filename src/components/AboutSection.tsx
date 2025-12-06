@@ -21,7 +21,7 @@ const AboutSection = () => {
     {
       title: 'Director de posgrados en instituciones top',
       description:
-        'Pontificia Universidad Católica de Chile, IEBS, OBS. Formando talento en Analytics y CX con calificación docente promedio de 9.5/10',
+        'Pontificia Universidad Católica de Chile, IEBS, OBS. Formando talento en Analytics y CX con calificación docente promedio de 9.2/10',
     },
   ];
 
