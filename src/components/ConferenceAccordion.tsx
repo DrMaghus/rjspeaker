@@ -26,6 +26,7 @@ const ConferenceCard = ({
   duration,
   isOpen,
   onToggle,
+  conferenceSlug,
 }: ConferenceCardProps) => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
