@@ -17,6 +17,7 @@ const Index = () => {
       <main>
         <Hero />
         <LogoCarousel />
+        <VideoSection />
         <ConferenceAccordion />
         <StatsBar />
         <AboutSection />
