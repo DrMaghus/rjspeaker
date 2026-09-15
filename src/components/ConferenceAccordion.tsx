@@ -49,7 +49,10 @@ const ConferenceCard = ({
     : 'bg-gradient-to-b from-[#4495DE] to-[#3fafe4ff]';
 
   return (
-    <div className={`${gradientClass} rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:rotate-x-[2deg] relative`}>
+    <div
+      data-conference={conferenceSlug}
+      className={`${gradientClass} rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:rotate-x-[2deg] relative`}
+    >
 
       {/* Header - Always Visible */}
       <div className="flex flex-col items-center text-center gap-4 mb-4">
