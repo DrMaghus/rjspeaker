@@ -12,6 +12,7 @@ interface ConferenceCardProps {
   duration: string[];
   isOpen: boolean;
   onToggle: () => void;
+  conferenceSlug?: string;
 }
 
 const ConferenceCard = ({
