@@ -12,6 +12,7 @@ interface ConferenceCardProps {
   duration: string[];
   isOpen: boolean;
   onToggle: () => void;
+  conferenceSlug?: string;
 }
 
 const ConferenceCard = ({
@@ -25,6 +26,7 @@ const ConferenceCard = ({
   duration,
   isOpen,
   onToggle,
+  conferenceSlug,
 }: ConferenceCardProps) => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -47,7 +49,10 @@ const ConferenceCard = ({
     : 'bg-gradient-to-b from-[#4495DE] to-[#3fafe4ff]';
 
   return (
-    <div className={`${gradientClass} rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:rotate-x-[2deg] relative`}>
+    <div
+      data-conference={conferenceSlug}
+      className={`${gradientClass} rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:rotate-x-[2deg] relative`}
+    >
 
       {/* Header - Always Visible */}
       <div className="flex flex-col items-center text-center gap-4 mb-4">
@@ -197,6 +202,32 @@ const ConferenceAccordion = () => {
         'Keynote: 40-50 minutos',
         'Workshop: 90-120 minutos (con dinámicas participativas sobre el modelo VALOR)',
       ],
+    },
+    {
+      id: 3,
+      emoji: '🧠',
+      title: 'CX + IA: Cómo Personalizar sin Perder lo Personal',
+      subtitle:
+        'La mayoría de las empresas ya invirtió en tecnología para personalizar. Pocas se preguntaron primero cómo querían ganar. Esta conferencia aborda la brecha entre tener las herramientas y saber activarlas para generar experiencias que el cliente valore de verdad.',
+      description:
+        'Todos hablan de IA en Customer Experience, pero casi nadie se está haciendo las preguntas correctas: ¿qué pasa cuando la personalización deja de sentirse como servicio y empieza a sentirse como vigilancia? ¿Cuánto de la promesa de la IA se traduce en valor real para el negocio? En esta charla, Richard comparte su experiencia liderando estrategias de hiperpersonalización con marcas en LATAM y propone un enfoque donde la tecnología acelera la relevancia sin sacrificar la confianza. Con casos reales de banca, retail y telecomunicaciones, la conferencia conecta la visión estratégica con la ejecución, mostrando cómo alinear equipos, datos y plataformas para que la personalización pase de ser una demo impresionante a un motor de crecimiento.',
+      idealFor: [
+        'Líderes de CX, Marketing Digital y Transformación que ya cuentan con tecnología pero no ven el retorno esperado',
+        'Ejecutivos C-Level que buscan entender cómo la IA impacta la relación con el cliente, más allá del hype',
+        'Empresas en banca, retail, telecomunicaciones y ecommerce que quieren activar su estrategia de personalización con resultados medibles',
+      ],
+      takeaways: [
+        'Claridad sobre por qué la mayoría de las estrategias de personalización se estancan (y no es por la tecnología)',
+        'Un framework práctico para diagnosticar en qué punto está su organización y cómo destrabar la estrategia',
+        'Cómo pasar de segmentación tradicional a personalización basada en intención real del cliente',
+        'El rol de los agentes de IA en la experiencia del cliente y qué significa para la confianza de marca',
+        'Criterios para alinear equipos, procesos y plataformas antes de escalar cualquier iniciativa de IA en CX',
+      ],
+      duration: [
+        'Keynote: 40-50 minutos',
+        'Workshop: 90-120 minutos (con diagnóstico práctico de madurez en personalización y mapa de oportunidades)',
+      ],
+      conferenceSlug: 'cx-ia-personalizar',
     },
   ];
 
