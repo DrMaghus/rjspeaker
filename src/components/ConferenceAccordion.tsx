@@ -86,7 +86,7 @@ const ConferenceCard = ({
       {/* Expandable Content */}
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-[2000px] opacity-100 mt-6' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[5000px] opacity-100 mt-6' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="space-y-6 pt-6 border-t border-white/20">
@@ -205,7 +205,7 @@ const ConferenceAccordion = () => {
     },
     {
       id: 3,
-      emoji: '🧠',
+      emoji: '🔮',
       title: 'CX + IA: Cómo Personalizar sin Perder lo Personal',
       subtitle:
         'La mayoría de las empresas ya invirtió en tecnología para personalizar. Pocas se preguntaron primero cómo querían ganar. Esta conferencia aborda la brecha entre tener las herramientas y saber activarlas para generar experiencias que el cliente valore de verdad.',

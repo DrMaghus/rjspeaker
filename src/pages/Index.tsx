@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import LogoCarousel from '@/components/LogoCarousel';
+import VideoSection from '@/components/VideoSection';
 import ConferenceAccordion from '@/components/ConferenceAccordion';
 import StatsBar from '@/components/StatsBar';
 import AboutSection from '@/components/AboutSection';
@@ -16,6 +17,7 @@ const Index = () => {
       <main>
         <Hero />
         <LogoCarousel />
+        <VideoSection />
         <ConferenceAccordion />
         <StatsBar />
         <AboutSection />
