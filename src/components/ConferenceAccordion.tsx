@@ -205,7 +205,7 @@ const ConferenceAccordion = () => {
     },
     {
       id: 3,
-      emoji: '🧠',
+      emoji: '🔮',
       title: 'CX + IA: Cómo Personalizar sin Perder lo Personal',
       subtitle:
         'La mayoría de las empresas ya invirtió en tecnología para personalizar. Pocas se preguntaron primero cómo querían ganar. Esta conferencia aborda la brecha entre tener las herramientas y saber activarlas para generar experiencias que el cliente valore de verdad.',
