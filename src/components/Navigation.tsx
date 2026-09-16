@@ -29,6 +29,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isPodcastOpen, setIsPodcastOpen] = useState(false);
   const [isMobilePodcastOpen, setIsMobilePodcastOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
