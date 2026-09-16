@@ -158,13 +158,14 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
-        className="lg:hidden fixed inset-0 bg-black/50 transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 bg-black/50 transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
+      {/* Mobile Menu Panel */}
       <div
         className={`lg:hidden fixed right-0 top-0 bottom-0 w-64 bg-white shadow-2xl transform transition-transform duration-300 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
