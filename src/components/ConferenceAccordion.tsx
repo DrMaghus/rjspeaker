@@ -259,12 +259,16 @@ const ConferenceAccordion = () => {
         {/* Conference Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {conferences.map((conference) => (
-            <ConferenceCard
+            <div
               key={conference.id}
-              {...conference}
-              isOpen={openCards.has(conference.id)}
-              onToggle={() => handleToggle(conference.id)}
-            />
+              className={conference.id === 3 ? 'md:col-span-2' : ''}
+            >
+              <ConferenceCard
+                {...conference}
+                isOpen={openCards.has(conference.id)}
+                onToggle={() => handleToggle(conference.id)}
+              />
+            </div>
           ))}
         </div>
       </div>
