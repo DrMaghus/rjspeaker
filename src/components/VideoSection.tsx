@@ -10,7 +10,7 @@ const VideoSection = () => {
           style={{ aspectRatio: '16 / 9' }}
         >
           <iframe
-            src="https://www.youtube.com/embed/QuKRJyGGHhQ"
+            src="https://www.youtube-nocookie.com/embed/QuKRJyGGHhQ?rel=0&modestbranding=1&iv_load_policy=3&controls=1"
             title="Richard Johnson - Speaker Reel"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
