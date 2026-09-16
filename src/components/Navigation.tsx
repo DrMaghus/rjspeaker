@@ -81,8 +81,16 @@ const Navigation = () => {
                 <div
                   key={link.name}
                   className="relative"
-                  onMouseEnter={() => setIsPodcastOpen(true)}
-                  onMouseLeave={() => setIsPodcastOpen(false)}
+                  onMouseEnter={() => {
+                    if (closeTimer.current) {
+                      clearTimeout(closeTimer.current);
+                      closeTimer.current = null;
+                    }
+                    setIsPodcastOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    closeTimer.current = setTimeout(() => setIsPodcastOpen(false), 200);
+                  }}
                 >
                   <button
                     className="text-navy hover:text-sky font-medium transition-colors duration-300 flex items-center gap-1"
@@ -95,32 +103,38 @@ const Navigation = () => {
                       }`}
                     />
                   </button>
-                  {/* Dropdown */}
+                  {/* Dropdown — sin gap: padding-top mantiene la zona de hover continua */}
                   <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 min-w-[220px] bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 origin-top ${
-                      isPodcastOpen
-                        ? 'opacity-100 visible translate-y-0'
-                        : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[220px] ${
+                      isPodcastOpen ? 'pointer-events-auto' : 'pointer-events-none'
                     }`}
                   >
-                    {podcastOptions.map((option) => (
-                      <a
-                        key={option.name}
-                        href={option.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between gap-3 px-4 py-3 text-navy hover:bg-navy hover:text-white transition-colors duration-200 group"
-                      >
-                        <span className="font-medium text-sm whitespace-nowrap">
-                          {option.name}
-                        </span>
-                        {option.isNew && (
-                          <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-wide bg-orange text-white px-2 py-0.5 rounded-full group-hover:bg-white group-hover:text-orange transition-colors duration-200">
-                            Nuevo
+                    <div
+                      className={`bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 origin-top ${
+                        isPodcastOpen
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible -translate-y-2'
+                      }`}
+                    >
+                      {podcastOptions.map((option) => (
+                        <a
+                          key={option.name}
+                          href={option.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between gap-3 px-4 py-3 text-navy hover:bg-navy hover:text-white transition-colors duration-200 group"
+                        >
+                          <span className="font-medium text-sm whitespace-nowrap">
+                            {option.name}
                           </span>
-                        )}
-                      </a>
-                    ))}
+                          {option.isNew && (
+                            <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-wide bg-orange text-white px-2 py-0.5 rounded-full group-hover:bg-white group-hover:text-orange transition-colors duration-200">
+                              Nuevo
+                            </span>
+                          )}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ) : link.href ? (
